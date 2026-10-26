@@ -1,0 +1,163 @@
+/*
+Theme Name: Aurélio Pessoal
+Description: Site pessoal de Aurélio Júnior, com conteúdo em uma página e navegação por seções.
+Version: 3.0.0
+Text Domain: aurelio-pessoal
+*/
+
+:root {
+	--ink: #172033;
+	--link: #087ca8;
+	--muted: #64748b;
+	--line: #e2e8f0;
+	--content-width: 720px;
+	--wide-width: 1000px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+	margin: 0;
+	background: #fff;
+	color: var(--ink);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 1.65;
+}
+a { color: var(--link); text-underline-offset: .18em; }
+a:hover, a:focus-visible { color: #075c7c; }
+img { display: block; height: auto; max-width: 100%; }
+.skip-link {
+	position: absolute; top: 8px; left: 8px; z-index: 20;
+	transform: translateY(-150%); background: #fff; padding: 8px 12px;
+}
+.skip-link:focus { transform: translateY(0); }
+.site-header { padding: 36px 20px 28px; }
+.site-header-inner { width: min(var(--wide-width), 100%); margin: 0 auto; }
+.site-title {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 500;
+	line-height: 1.1;
+	text-align: center;
+}
+.site-title a { color: var(--ink); text-decoration: none; }
+.main-nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 10px 24px;
+	margin-top: 22px;
+}
+.main-nav a { color: #334155; font-size: 1rem; text-decoration: none; }
+.main-nav a:hover, .main-nav a:focus-visible { color: var(--link); }
+.site-main { width: min(var(--content-width), calc(100% - 40px)); margin: 0 auto; }
+.entry-content { padding-bottom: 3rem; }
+.hero { padding: 3rem 0 2rem; }
+.eyebrow, .section-kicker {
+	margin: 0 0 .9rem;
+	color: var(--link);
+	font-size: .76rem;
+	font-weight: 700;
+	letter-spacing: .12em;
+	line-height: 1.5;
+}
+.hero-title {
+	margin: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(3rem, 8vw, 5.5rem);
+	font-weight: 500;
+	letter-spacing: -.045em;
+	line-height: .98;
+}
+.hero-title span { color: var(--link); }
+.hero-intro { max-width: 56ch; margin: 1.35rem 0; font-size: 1.1rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 1.5rem 0 2rem; }
+.hero-actions a, .contact-cta a { font-weight: 650; text-decoration: none; }
+.hero-image { margin-top: 2rem; }
+.hero-image img { width: 100%; max-height: 520px; object-fit: cover; object-position: center; }
+.wp-block-image { margin: 1.5rem 0; }
+.wp-block-image img { border-radius: 9px; }
+.wp-block-image figcaption { margin-top: .55rem; color: var(--muted); font-size: .88rem; line-height: 1.4; }
+.content-section { margin-top: 6rem; scroll-margin-top: 2rem; }
+.content-section > h2 {
+	margin: 0 0 1.25rem;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(2.2rem, 6vw, 3.4rem);
+	font-weight: 500;
+	letter-spacing: -.03em;
+	line-height: 1.06;
+}
+.content-section > p { margin: 1rem 0; }
+.content-section h3 { margin: 1.7rem 0 .5rem; font-size: 1.35rem; line-height: 1.3; }
+.content-section strong { font-weight: 700; }
+blockquote {
+	margin: 2rem 0 0;
+	border-left: 3px solid var(--link);
+	padding: .4rem 0 .4rem 1.25rem;
+	color: #475569;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 1.15rem;
+	font-style: italic;
+}
+.education-item { margin: 2rem 0; border-left: 1px solid var(--line); padding: 0 0 0 1.1rem; }
+.education-item h3 { margin: .3rem 0; }
+.education-item p { margin: .4rem 0; }
+.education-date { color: var(--ink); font-weight: 700; }
+.education-date span { color: var(--muted); font-weight: 400; }
+.interest-tags, .interest-note { color: var(--muted); font-size: .92rem; }
+.interest-tags { font-weight: 650; }
+.interest-tags span { color: var(--link); }
+.interest-item { margin-top: 3rem; }
+.interest-item h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.8rem; font-weight: 500; }
+.interest-item > p { margin: .6rem 0; }
+.interest-item .interest-note { font-weight: 650; }
+.interest-photo-grid { margin-top: 1.25rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 1.5rem 0; }
+.photo-grid .wp-block-image { min-width: 0; margin: 0; }
+.interest-photo-grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.habbo-note { margin-top: 4rem; }
+.habbo-image { width: auto; max-height: 430px; }
+.family-gallery { margin-top: 2rem; }
+.family-gallery img { width: 100%; height: 220px; object-fit: cover; }
+.gallery-link { display: block; overflow: hidden; border-radius: 9px; }
+.gallery-link img { transition: transform .2s ease; }
+.gallery-link:hover img, .gallery-link:focus-visible img { transform: scale(1.035); }
+.gallery-hint { color: var(--muted); font-size: .9rem; }
+.contact-cta { margin: 1.75rem 0 !important; }
+.contact-cta a { display: inline-block; border-bottom: 1px solid currentColor; padding-bottom: .15rem; }
+.contact-list { display: grid; grid-template-columns: 1fr; gap: .8rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+.contact-list li { border-top: 1px solid var(--line); padding: 1rem 0; }
+.contact-list strong { color: var(--muted); font-size: .85rem; }
+.site-footer {
+	width: min(var(--content-width), calc(100% - 40px));
+	margin: 0 auto;
+	border-top: 1px solid var(--line);
+	color: var(--muted);
+	font-size: .86rem;
+	padding: 20px 0 32px;
+}
+.site-footer p { margin: .25rem 0; }
+.site-footer strong { color: var(--ink); }
+.site-footer a { color: inherit; }
+
+@media (max-width: 781px) {
+	.site-header { padding: 24px 16px 20px; }
+	.main-nav { gap: 8px 18px; margin-top: 18px; }
+	.site-main, .site-footer { width: min(var(--content-width), calc(100% - 32px)); }
+	.hero { padding-top: 2rem; }
+	.content-section { margin-top: 4.5rem; }
+	.family-gallery img { height: 180px; }
+}
+@media (max-width: 420px) {
+	body { font-size: 17px; }
+	.main-nav { gap: 7px 14px; }
+	.main-nav a { font-size: .92rem; }
+	.photo-grid { gap: 10px; }
+	.family-gallery img { height: 145px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.gallery-link img { transition: none; }
+}
